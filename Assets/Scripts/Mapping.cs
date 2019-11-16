@@ -6,7 +6,7 @@ public static class Mapping
 {
     static float d = 1f;
     static float a = 0.5f;
-    static int n = 5;
+    static int n = 1;
     static float g = n * Mathf.PI * 2;
     static float b = 1f;
     static float c = 0f;

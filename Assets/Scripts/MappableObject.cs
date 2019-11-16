@@ -12,6 +12,7 @@ public class MappableObject : MonoBehaviour
         vis = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         vis.transform.position = transform.position;
         vis.transform.localScale = transform.localScale;
+        vis.GetComponent<SphereCollider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -20,5 +21,7 @@ public class MappableObject : MonoBehaviour
         float t = Time.time;
         var v = Mapping.s(new Vector2(transform.position.x, transform.position.y), t);
         vis.transform.position = new Vector3(v.x, v.y, vis.transform.position.z);
+
+        Shader.SetGlobalFloat("_TIME", Time.time);
     }
 }
